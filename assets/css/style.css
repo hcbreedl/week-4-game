@@ -1,0 +1,14 @@
+body {
+	background-image: url("https://github.com/hcbreedl/week-4-game/blob/master/assets/images/clash-of-clans-background.jpg?raw=true");
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+img {
+	height: 150px;
+	width: 130px;
+	border-radius: 10px;
+}
+
