@@ -188,12 +188,10 @@ $( document ).ready(function() {
 //===========================
 // Pressing the Attack Button
 //===========================
-		if ($(this).is($('#attack'))) {
-
+		$('#attack').on('click', function() {
 			console.log('Attack button was clicked!');
-				
-
-			};
+		});
+		
 			
 		
 	}); //End of on.click function
