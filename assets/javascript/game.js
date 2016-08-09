@@ -30,103 +30,101 @@ $( document ).ready(function() {
 	var defender;
 
 	var opponentsRow;
-	var defenderRow;
-
-	// Selecting user's character:	
+	var defenderRow;	
 	
-//============
+//============================
+// Selecting user's character:
+//============================
 	$(".character").on('click', function() {
-		if ($(this).is($('#man-with-sword'))) {
-			usersCharacter = $('#girl-with-bow');
+		if (($(this).is($('#warrior'))) && ($(this).hasClass('character'))) {
+			usersCharacter = $('#warrior');
 			opponentsRow = $('<div id="opponentsRow" class="row"></div>');
-			 opponent1 = $('#man-with-sword').addClass("opponent");;
-			 opponent2 = $('#skeleton-with-bomb').addClass("opponent");;
-			 opponent3 = $('#dragon-man').addClass("opponent");;
+			 opponent1 = $('#girl').addClass("opponent").removeClass("character");
+			 opponent2 = $('#goblin').addClass("opponent").removeClass("character");
+			 opponent3 = $('#giant').addClass("opponent").removeClass("character");
 			$('#media-container').after(opponentsRow);
 			opponentsRow.append(opponent1);
 			opponentsRow.append(opponent2);
 			opponentsRow.append(opponent3);
-			$('#girl-with-bow').unbind();
+			$('#warrior').unbind();
 		};
 
-		if ($(this).is($('#girl-with-bow'))) {
-			usersCharacter = $('#girl-with-bow');
+		if ($(this).is($('#girl')) && ($(this).hasClass('character'))) {
+			usersCharacter = $('#girl');
 			opponentsRow = $('<div id="opponentsRow" class="row"></div>');
-			 opponent1 = $('#man-with-sword').addClass("opponent");;
-			 opponent2 = $('#skeleton-with-bomb').addClass("opponent");;
-			 opponent3 = $('#dragon-man').addClass("opponent");;
+			 opponent1 = $('#warrior').addClass("opponent").removeClass("character");
+			 opponent2 = $('#goblin').addClass("opponent").removeClass("character");
+			 opponent3 = $('#giant').addClass("opponent").removeClass("character");
 			$('#media-container').after(opponentsRow);
 			opponentsRow.append(opponent1);
 			opponentsRow.append(opponent2);
 			opponentsRow.append(opponent3);
-			$('#girl-with-bow').unbind();
+			$('#girl').unbind();
 		};
 
-		if ($(this).is($('#skeleton-with-bomb'))) {
-			usersCharacter = $('#girl-with-bow');
+		if ($(this).is($('#goblin')) && ($(this).hasClass('character'))) {
+			usersCharacter = $('#goblin');
 			opponentsRow = $('<div id="opponentsRow" class="row"></div>');
-			 opponent1 = $('#man-with-sword').addClass("opponent");;
-			 opponent2 = $('#skeleton-with-bomb').addClass("opponent");;
-			 opponent3 = $('#dragon-man').addClass("opponent");;
+			 opponent1 = $('#warrior').addClass("opponent").removeClass("character");
+			 opponent2 = $('#girl').addClass("opponent").removeClass("character");
+			 opponent3 = $('#giant').addClass("opponent").removeClass("character");
 			$('#media-container').after(opponentsRow);
 			opponentsRow.append(opponent1);
 			opponentsRow.append(opponent2);
 			opponentsRow.append(opponent3);
-			$('#girl-with-bow').unbind();
+			$('#goblin').unbind();
 		};
 
-		if ($(this).is($('#dragon-man'))) {
-			usersCharacter = $('#girl-with-bow');
+		if ($(this).is($('#giant')) && ($(this).hasClass('character'))) {
+			usersCharacter = $('#girl');
 			opponentsRow = $('<div id="opponentsRow" class="row"></div>');
-			 opponent1 = $('#man-with-sword').addClass("opponent");;
-			 opponent2 = $('#skeleton-with-bomb').addClass("opponent");;
-			 opponent3 = $('#dragon-man').addClass("opponent");;
+			 opponent1 = $('#warrior').addClass("opponent").removeClass("character");
+			 opponent2 = $('#girl').addClass("opponent").removeClass("character");
+			 opponent3 = $('#goblin').addClass("opponent").removeClass("character");
 			$('#media-container').after(opponentsRow);
 			opponentsRow.append(opponent1);
 			opponentsRow.append(opponent2);
 			opponentsRow.append(opponent3);
-			$('#girl-with-bow').unbind();
+			$('#giant').unbind();
 		};
-		console.log('User Selected!');
-	});
-//=============
-		
 
-
-
-	// Selecting opponent to attack
-	$('.opponent').on('click', function() {
-		console.log("opponent click is working");
-		if ($(this).is($('#man-with-sword'))) {
+//==================
+//Selecting Opponent
+//==================
+		if ($(this).is($('#warrior')) && ($(this).hasClass('opponent'))) {
 			defenderRow = $('<div id="defenderRow" class="row"></div>');
-			defender = $('#man-with-sword');
+			defender = $('#warrior');
 			opponentsRow.after(defenderRow);
 			defenderRow.append(defender);
 			console.log("working");
 
 		};
-		if ($(this).is($('#girl-with-bow'))) {
+		if ($(this).is($('#girl')) && ($(this).hasClass('opponent'))) {
 			defenderRow = $('<div id="defenderRow" class="row"></div>');
-			defender = $('#girl-with-bow');
+			defender = $('#girl');
 			opponentsRow.after(defenderRow);
 			defenderRow.append(defender);
 
 		};
-		if ($(this).is($('#skeleton-with-bomb'))) {
+		if ($(this).is($('#goblin')) && ($(this).hasClass('opponent'))) {
 			defenderRow = $('<div id="defenderRow" class="row"></div>');
-			defender = $('#skeleton-with-bomb');
+			defender = $('#goblin');
 			opponentsRow.after(defenderRow);
 			defenderRow.append(defender);
 
 		};
-		if ($(this).is($('#dragon-man'))) {
+		if ($(this).is($('#giant')) && ($(this).hasClass('opponent'))) {
 			defenderRow = $('<div id="defenderRow" class="row"></div>');
-			defender = $('#dragon-man');
+			defender = $('#giant');
 			opponentsRow.after(defenderRow);
 			defenderRow.append(defender);
 
 		};
 	});
+//=============
+
+
+	
 
 
 
