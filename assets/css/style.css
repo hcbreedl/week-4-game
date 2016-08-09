@@ -19,3 +19,58 @@ img {
 	margin-top: 40px;
     margin-left: 100px;
 }
+
+#defenderRow img {
+	border: solid red 1px;
+	margin-top: 25px;
+}
+
+#opponentsRow img {
+	border: solid orange 1px;
+	opacity: 0.5;
+	margin-top: 25px;
+	margin-right: 0px;
+}
+
+#userRow img {
+	border: solid green 1px;
+}
+
+#attack {
+	border-radius: 15px;
+	background-color: red;
+	margin-top: 48px;
+	margin-left: 20px;
+	height: 80px;
+	width: 130px;
+	color: white;
+	opacity: 0.75;
+	font-family: impact;
+	font-size: 36px;
+	border: solid black 2px;
+}
+
+#attack:focus {
+	outline: 0;
+}
+
+#attack:active {
+	background-color: grey;
+}
+
+#displayStats {
+	border-radius: 10px;
+	background:rgba(255,255,255, 0.9);
+	margin-top: 48px;
+	padding: 10px;
+	height: 80px;
+	width: 130px;
+}
+
+
+
+
+
+
+
+
