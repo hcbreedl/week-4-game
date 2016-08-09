@@ -12,3 +12,9 @@ img {
 	border-radius: 10px;
 }
 
+#start-button {
+	height: 50px;
+	width: 200px;
+	margin-top: 40px;
+    margin-left: 100px;
+}
