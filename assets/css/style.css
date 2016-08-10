@@ -58,7 +58,16 @@ img {
 	background-color: grey;
 }
 
-#displayStats {
+#displayUserStats {
+	border-radius: 10px;
+	background:rgba(255,255,255, 0.9);
+	margin-top: 48px;
+	padding: 10px;
+	height: 80px;
+	width: 130px;
+}
+
+#displayDefenderStats {
 	border-radius: 10px;
 	background:rgba(255,255,255, 0.9);
 	margin-top: 48px;

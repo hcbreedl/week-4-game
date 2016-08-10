@@ -26,13 +26,16 @@ $( document ).ready(function() {
 
 	var usersCharacter;
 	var usersCharacterStats;
-	var displayStats;
+	var displayUserStats;
 
 	var opponent1;
 	var opponent2;
 	var opponent3;
 
 	var defender;
+	var defenderCharacterStats;
+	var displayDefenderStats;
+
 
 	var opponentsRow;
 	var defenderRow;
@@ -47,8 +50,8 @@ $( document ).ready(function() {
 		if (($(this).is($('#warrior'))) && ($(this).hasClass('character'))) {
 			usersCharacter = $('#warrior');
 			usersCharacterStats = warrior;
-			displayStats = $('<div id="displayStats" class="col-xs-2">').html('Health: ' + warrior.hp + '<br>Attack: ' + warrior.ap + '<br>Counter: ' + warrior.ca);
-			$('#userRow').append(displayStats);
+			displayUserStats = $('<div id="displayUserStats" class="col-xs-2">').html('Health: ' + usersCharacterStats.hp + '<br>Attack: ' + usersCharacterStats.ap + '<br>Counter: ' + usersCharacterStats.ca);
+			$('#userRow').append(displayUserStats);
 
 			opponentsRow = $('<div id="opponentsRow" class="row"></div>');
 			 opponent1 = $('#girl').addClass("opponent").removeClass("character");
@@ -67,9 +70,9 @@ $( document ).ready(function() {
 		if ($(this).is($('#girl')) && ($(this).hasClass('character'))) {
 			usersCharacter = $('#girl');
 			usersCharacterStats = girl;
-			displayStats = $('<div id="displayStats" class="col-xs-2">').html('Health: ' + girl.hp + '<br>Attack: ' + girl.ap + '<br>Counter: ' + girl.ca);
+			displayUserStats = $('<div id="displayUserStats" class="col-xs-2">').html('Health: ' + usersCharacterStats.hp + '<br>Attack: ' + usersCharacterStats.ap + '<br>Counter: ' + usersCharacterStats.ca);
 
-			$('#userRow').append(displayStats);
+			$('#userRow').append(displayUserStats);
 
 			opponentsRow = $('<div id="opponentsRow" class="row"></div>');
 			 opponent1 = $('#warrior').addClass("opponent").removeClass("character");
@@ -88,8 +91,8 @@ $( document ).ready(function() {
 		if ($(this).is($('#goblin')) && ($(this).hasClass('character'))) {
 			usersCharacter = $('#goblin');
 			usersCharacterStats = goblin;
-			displayStats = $('<div id="displayStats" class="col-xs-2">').html('Health: ' + goblin.hp + '<br>Attack: ' + goblin.ap + '<br>Counter: ' + goblin.ca);
-			$('#userRow').append(displayStats);
+			displayUserStats = $('<div id="displayUserStats" class="col-xs-2">').html('Health: ' + usersCharacterStats.hp + '<br>Attack: ' + usersCharacterStats.ap + '<br>Counter: ' + usersCharacterStats.ca);
+			$('#userRow').append(displayUserStats);
 			console.log(usersCharacterStats);
 
 			opponentsRow = $('<div id="opponentsRow" class="row"></div>');
@@ -109,8 +112,8 @@ $( document ).ready(function() {
 		if ($(this).is($('#giant')) && ($(this).hasClass('character'))) {
 			usersCharacter = $('#giant');
 			usersCharacterStats = giant;
-			displayStats = $('<div id="displayStats" class="col-xs-2">').html('Health: ' + giant.hp + '<br>Attack: ' + giant.ap + '<br>Counter: ' + giant.ca);
-			$('#userRow').append(displayStats);
+			displayUserStats = $('<div id="displayUserStats" class="col-xs-2">').html('Health: ' + usersCharacterStats.hp + '<br>Attack: ' + usersCharacterStats.ap + '<br>Counter: ' + usersCharacterStats.ca);
+			$('#userRow').append(displayUserStats);
 
 			opponentsRow = $('<div id="opponentsRow" class="row"></div>');
 			 opponent1 = $('#warrior').addClass("opponent").removeClass("character");
@@ -133,56 +136,60 @@ $( document ).ready(function() {
 		if ($(this).is($('#warrior')) && ($(this).hasClass('opponent'))) {
 			defenderRow = $('<div id="defenderRow" class="row"></div>');
 			defender = $('#warrior');
+			defenderCharacterStats = warrior;
 			opponentsRow.after(defenderRow);
 			defenderRow.append(defender);
 			attack = $('<button id="attack">Attack!</button>');
 			$('#userRow').append(attack);
 			$('#warrior').unbind();
 
-			displayStats = $('<div id="displayStats" class="col-xs-2">').html('Health: ' + warrior.hp + '<br>Attack: ' + warrior.ap + '<br>Counter: ' + warrior.ca);
-			defenderRow.append(displayStats);
+			displayDefenderStats = $('<div id="displayDefenderStats" class="col-xs-2">').html('Health: ' + defenderCharacterStats.hp + '<br>Attack: ' + defenderCharacterStats.ap + '<br>Counter: ' + defenderCharacterStats.ca);
+			defenderRow.append(displayDefenderStats);
 		};
 
 		// Selecting Girl as Defender
 		if ($(this).is($('#girl')) && ($(this).hasClass('opponent'))) {
 			defenderRow = $('<div id="defenderRow" class="row"></div>');
 			defender = $('#girl');
+			defenderCharacterStats = girl;
 			opponentsRow.after(defenderRow);
 			defenderRow.append(defender);
 			attack = $('<button id="attack">Attack!</button>');
 			$('#userRow').append(attack);
 			$('#girl').unbind();
 
-			displayStats = $('<div id="displayStats" class="col-xs-2">').html('Health: ' + girl.hp + '<br>Attack: ' + girl.ap + '<br>Counter: ' + girl.ca);
-			defenderRow.append(displayStats);
+			displayDefenderStats = $('<div id="displayDefenderStats" class="col-xs-2">').html('Health: ' + defenderCharacterStats.hp + '<br>Attack: ' + defenderCharacterStats.ap + '<br>Counter: ' + defenderCharacterStats.ca);
+			defenderRow.append(displayDefenderStats);
 		};
 
 		// Selecting Goblin as Defender
 		if ($(this).is($('#goblin')) && ($(this).hasClass('opponent'))) {
 			defenderRow = $('<div id="defenderRow" class="row"></div>');
 			defender = $('#goblin');
+			defenderCharacterStats = goblin;
 			opponentsRow.after(defenderRow);
 			defenderRow.append(defender);
 			attack = $('<button id="attack">Attack!</button>');
 			$('#userRow').append(attack);
 			$('#goblin').unbind();
 
-			displayStats = $('<div id="displayStats" class="col-xs-2">').html('Health: ' + goblin.hp + '<br>Attack: ' + goblin.ap + '<br>Counter: ' + goblin.ca);
-			defenderRow.append(displayStats);
+			displayDefenderStats = $('<div id="displayDefenderStats" class="col-xs-2">').html('Health: ' + defenderCharacterStats.hp + '<br>Attack: ' + defenderCharacterStats.ap + '<br>Counter: ' + defenderCharacterStats.ca);
+			defenderRow.append(displayDefenderStats);
 		};
 
 		// Selecting Giant as Defender
 		if ($(this).is($('#giant')) && ($(this).hasClass('opponent'))) {
 			defenderRow = $('<div id="defenderRow" class="row"></div>');
 			defender = $('#giant');
+			defenderCharacterStats = giant;
 			opponentsRow.after(defenderRow);
 			defenderRow.append(defender);
 			attack = $('<button id="attack">Attack!</button>');
 			$('#userRow').append(attack);
 			$('#giant').unbind();
 
-			displayStats = $('<div id="displayStats" class="col-xs-2">').html('Health: ' + giant.hp + '<br>Attack: ' + giant.ap + '<br>Counter: ' + giant.ca);
-			defenderRow.append(displayStats);
+			displayDefenderStats = $('<div id="displayDefenderStats" class="col-xs-2">').html('Health: ' + defenderCharacterStats.hp + '<br>Attack: ' + defenderCharacterStats.ap + '<br>Counter: ' + defenderCharacterStats.ca);
+			defenderRow.append(displayDefenderStats);
 		};
 
 //===========================
@@ -190,6 +197,16 @@ $( document ).ready(function() {
 //===========================
 		$('#attack').on('click', function() {
 			console.log('Attack button was clicked!');
+
+			usersCharacterStats.hp = usersCharacterStats.hp - defenderCharacterStats.ca;
+			defenderCharacterStats.hp = defenderCharacterStats.hp - usersCharacterStats.ap;
+			usersCharacterStats.ap = usersCharacterStats.ap * 2;
+
+			$('#displayUserStats').html('Health: ' + usersCharacterStats.hp + '<br>Attack: ' + usersCharacterStats.ap + '<br>Counter: ' + usersCharacterStats.ca);
+			$('#displayDefenderStats').html('Health: ' + defenderCharacterStats.hp + '<br>Attack: ' + defenderCharacterStats.ap + '<br>Counter: ' + defenderCharacterStats.ca);
+
+			console.log(usersCharacterStats);
+			console.log(defenderCharacterStats);
 		});
 		
 			
