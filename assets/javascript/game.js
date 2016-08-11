@@ -62,7 +62,7 @@ $( document ).ready(function() {
 	$(".character").on('click', function() {
 
 		// Selecting Warrior as usersCharacter
-		$('#instructions').html("<p>Now, from the three possible opponents<br>(circled in Orange),<br> select who you'd like to<br> ATTACK <br>first!<br>That character will be circled in Red!</p>");
+		$('#instructions').html("<p>Now, from the three possible opponents<br>(circled in <span style='color: orange'>ORANGE</span>),<br> select who you'd like to<br> <span style='font-size: 24px'>ATTACK</span> first!<br>That character will be<br> circled in <span style='color: red'>RED</span>!</p>");
 		if (($(this).is($('#warrior'))) && ($(this).hasClass('character'))) {
 			usersCharacter = $('#warrior');
 			usersCharacterStats = warrior;
@@ -160,7 +160,7 @@ $( document ).ready(function() {
 
 			displayDefenderStats = $('<div id="displayDefenderStats" class="col-xs-2">').html('Health: ' + defenderCharacterStats.hp + '<br>Attack: ' + defenderCharacterStats.ap + '<br>Counter: ' + defenderCharacterStats.ca);
 			defenderRow.append(displayDefenderStats);
-			$('#instructions').html("<p>Click ATTACK until he disappears!</p>");
+			$('#instructions').html("<p>Click<br> <span style='font-size: 24px'>ATTACK</span><br> until he disappears!</p>");
 
 		};
 
@@ -177,7 +177,7 @@ $( document ).ready(function() {
 
 			displayDefenderStats = $('<div id="displayDefenderStats" class="col-xs-2">').html('Health: ' + defenderCharacterStats.hp + '<br>Attack: ' + defenderCharacterStats.ap + '<br>Counter: ' + defenderCharacterStats.ca);
 			defenderRow.append(displayDefenderStats);
-			$('#instructions').html("<p>Click ATTACK until he disappears!</p>");
+			$('#instructions').html("<p>Click <br> <span style='font-size: 24px'>ATTACK</span><br> until he disappears!</p>");
 
 		};
 
@@ -194,7 +194,7 @@ $( document ).ready(function() {
 
 			displayDefenderStats = $('<div id="displayDefenderStats" class="col-xs-2">').html('Health: ' + defenderCharacterStats.hp + '<br>Attack: ' + defenderCharacterStats.ap + '<br>Counter: ' + defenderCharacterStats.ca);
 			defenderRow.append(displayDefenderStats);
-			$('#instructions').html("<p>Click ATTACK until he disappears!</p>");
+			$('#instructions').html("<p>Click <br> <span style='font-size: 24px'>ATTACK</span><br> until he disappears!</p>");
 
 		};
 
@@ -211,7 +211,7 @@ $( document ).ready(function() {
 
 			displayDefenderStats = $('<div id="displayDefenderStats" class="col-xs-2">').html('Health: ' + defenderCharacterStats.hp + '<br>Attack: ' + defenderCharacterStats.ap + '<br>Counter: ' + defenderCharacterStats.ca);
 			defenderRow.append(displayDefenderStats);
-			$('#instructions').html("<p>Click ATTACK until he disappears!</p>");
+			$('#instructions').html("<p>Click <br> <span style='font-size: 24px'>ATTACK</span><br> until he disappears!</p>");
 
 		};
 	
