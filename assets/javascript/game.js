@@ -1,5 +1,7 @@
 $( document ).ready(function() {
 	var newGame = function () {
+		
+
 	var warrior = {
 		"hp": 100,
 		"ap": 30,
@@ -79,6 +81,11 @@ $( document ).ready(function() {
 			opponentsRow.append(opponent2);
 			opponentsRow.append(opponent3);
 
+			usersCharacter.fadeOut().fadeIn();
+			opponent1.fadeOut().fadeIn('slow');
+			opponent2.fadeOut().fadeIn('slow');
+			opponent3.fadeOut().fadeIn('slow');
+
 			$('#warrior').unbind();
 		};
 
@@ -99,6 +106,11 @@ $( document ).ready(function() {
 			opponentsRow.append(opponent1);
 			opponentsRow.append(opponent2);
 			opponentsRow.append(opponent3);
+
+			usersCharacter.fadeOut().fadeIn();
+			opponent1.fadeOut().fadeIn('slow');
+			opponent2.fadeOut().fadeIn('slow');
+			opponent3.fadeOut().fadeIn('slow');
 			
 			$('#girl').unbind();
 		};
@@ -120,6 +132,11 @@ $( document ).ready(function() {
 			opponentsRow.append(opponent1);
 			opponentsRow.append(opponent2);
 			opponentsRow.append(opponent3);
+
+			usersCharacter.fadeOut().fadeIn();
+			opponent1.fadeOut().fadeIn('slow');
+			opponent2.fadeOut().fadeIn('slow');
+			opponent3.fadeOut().fadeIn('slow');
 			
 			$('#goblin').unbind();
 		};
@@ -140,6 +157,11 @@ $( document ).ready(function() {
 			opponentsRow.append(opponent1);
 			opponentsRow.append(opponent2);
 			opponentsRow.append(opponent3);
+
+			usersCharacter.fadeOut().fadeIn();
+			opponent1.fadeOut().fadeIn('slow');
+			opponent2.fadeOut().fadeIn('slow');
+			opponent3.fadeOut().fadeIn('slow');
 			
 			$('#giant').unbind();
 		};
@@ -162,6 +184,7 @@ $( document ).ready(function() {
 			defenderRow.append(displayDefenderStats);
 			$('#instructions').html("<p>Click<br> <span style='font-size: 24px'>ATTACK</span><br> until he disappears!</p>");
 
+			defender.fadeOut().fadeIn('slow');
 		};
 
 		// Selecting Girl as Defender
@@ -178,6 +201,8 @@ $( document ).ready(function() {
 			displayDefenderStats = $('<div id="displayDefenderStats" class="col-xs-2">').html('Health: ' + defenderCharacterStats.hp + '<br>Attack: ' + defenderCharacterStats.ap + '<br>Counter: ' + defenderCharacterStats.ca);
 			defenderRow.append(displayDefenderStats);
 			$('#instructions').html("<p>Click <br> <span style='font-size: 24px'>ATTACK</span><br> until he disappears!</p>");
+
+			defender.fadeOut().fadeIn('slow');
 
 		};
 
@@ -196,6 +221,7 @@ $( document ).ready(function() {
 			defenderRow.append(displayDefenderStats);
 			$('#instructions').html("<p>Click <br> <span style='font-size: 24px'>ATTACK</span><br> until he disappears!</p>");
 
+			defender.fadeOut().fadeIn('slow');
 		};
 
 		// Selecting Giant as Defender
@@ -213,6 +239,7 @@ $( document ).ready(function() {
 			defenderRow.append(displayDefenderStats);
 			$('#instructions').html("<p>Click <br> <span style='font-size: 24px'>ATTACK</span><br> until he disappears!</p>");
 
+			defender.fadeOut().fadeIn('slow');
 		};
 	
 
@@ -225,6 +252,9 @@ $( document ).ready(function() {
 			usersCharacterStats.hp = usersCharacterStats.hp - defenderCharacterStats.ca;
 			defenderCharacterStats.hp = defenderCharacterStats.hp - usersCharacterStats.ap;
 			usersCharacterStats.ap = usersCharacterStats.ap * 2;
+
+			// defender.effect('bounce', 'slow');
+			defender.fadeOut('fast').fadeIn('fast');
 
 			$('#displayUserStats').html('Health: ' + usersCharacterStats.hp + '<br>Attack: ' + usersCharacterStats.ap + '<br>Counter: ' + usersCharacterStats.ca);
 			$('#displayDefenderStats').html('Health: ' + defenderCharacterStats.hp + '<br>Attack: ' + defenderCharacterStats.ap + '<br>Counter: ' + defenderCharacterStats.ca);
