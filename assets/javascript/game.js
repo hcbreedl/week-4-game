@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 	var newGame = function () {
-		
+
 
 	var warrior = {
 		"hp": 100,
@@ -81,10 +81,10 @@ $( document ).ready(function() {
 			opponentsRow.append(opponent2);
 			opponentsRow.append(opponent3);
 
-			usersCharacter.fadeOut().fadeIn();
-			opponent1.fadeOut().fadeIn('slow');
-			opponent2.fadeOut().fadeIn('slow');
-			opponent3.fadeOut().fadeIn('slow');
+			usersCharacter.hide().fadeIn();
+			opponent1.hide().fadeIn(1000);
+			opponent2.hide().fadeIn(2500);
+			opponent3.hide().fadeIn(3500);
 
 			$('#warrior').unbind();
 		};
@@ -107,10 +107,10 @@ $( document ).ready(function() {
 			opponentsRow.append(opponent2);
 			opponentsRow.append(opponent3);
 
-			usersCharacter.fadeOut().fadeIn();
-			opponent1.fadeOut().fadeIn('slow');
-			opponent2.fadeOut().fadeIn('slow');
-			opponent3.fadeOut().fadeIn('slow');
+			usersCharacter.hide().fadeIn();
+			opponent1.hide().fadeIn(1000);
+			opponent2.hide().fadeIn(2500);
+			opponent3.hide().fadeIn(3500);
 			
 			$('#girl').unbind();
 		};
@@ -133,10 +133,10 @@ $( document ).ready(function() {
 			opponentsRow.append(opponent2);
 			opponentsRow.append(opponent3);
 
-			usersCharacter.fadeOut().fadeIn();
-			opponent1.fadeOut().fadeIn('slow');
-			opponent2.fadeOut().fadeIn('slow');
-			opponent3.fadeOut().fadeIn('slow');
+			usersCharacter.hide().fadeIn();
+			opponent1.hide().fadeIn(1000);
+			opponent2.hide().fadeIn(2500);
+			opponent3.hide().fadeIn(3500);
 			
 			$('#goblin').unbind();
 		};
@@ -158,10 +158,10 @@ $( document ).ready(function() {
 			opponentsRow.append(opponent2);
 			opponentsRow.append(opponent3);
 
-			usersCharacter.fadeOut().fadeIn();
-			opponent1.fadeOut().fadeIn('slow');
-			opponent2.fadeOut().fadeIn('slow');
-			opponent3.fadeOut().fadeIn('slow');
+			usersCharacter.hide().fadeIn();
+			opponent1.hide().fadeIn(1000);
+			opponent2.hide().fadeIn(2500);
+			opponent3.hide().fadeIn(3500);
 			
 			$('#giant').unbind();
 		};
