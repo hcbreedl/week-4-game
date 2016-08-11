@@ -62,6 +62,7 @@ $( document ).ready(function() {
 	$(".character").on('click', function() {
 
 		// Selecting Warrior as usersCharacter
+		$('#instructions').html("<p>Now, from the three possible opponents<br>(circled in Orange),<br> select who you'd like to<br> ATTACK <br>first!<br>That character will be circled in Red!</p>");
 		if (($(this).is($('#warrior'))) && ($(this).hasClass('character'))) {
 			usersCharacter = $('#warrior');
 			usersCharacterStats = warrior;
@@ -146,7 +147,6 @@ $( document ).ready(function() {
 //===========================================
 //Selecting Defender from available Opponents
 //===========================================
-
 		// Selecting Warrior as Defender
 		if ($(this).is($('#warrior')) && ($(this).hasClass('opponent'))) {
 			defenderRow = $('<div id="defenderRow" class="row"></div>');
@@ -160,6 +160,8 @@ $( document ).ready(function() {
 
 			displayDefenderStats = $('<div id="displayDefenderStats" class="col-xs-2">').html('Health: ' + defenderCharacterStats.hp + '<br>Attack: ' + defenderCharacterStats.ap + '<br>Counter: ' + defenderCharacterStats.ca);
 			defenderRow.append(displayDefenderStats);
+			$('#instructions').html("<p>Click ATTACK until he disappears!</p>");
+
 		};
 
 		// Selecting Girl as Defender
@@ -175,6 +177,8 @@ $( document ).ready(function() {
 
 			displayDefenderStats = $('<div id="displayDefenderStats" class="col-xs-2">').html('Health: ' + defenderCharacterStats.hp + '<br>Attack: ' + defenderCharacterStats.ap + '<br>Counter: ' + defenderCharacterStats.ca);
 			defenderRow.append(displayDefenderStats);
+			$('#instructions').html("<p>Click ATTACK until he disappears!</p>");
+
 		};
 
 		// Selecting Goblin as Defender
@@ -190,6 +194,8 @@ $( document ).ready(function() {
 
 			displayDefenderStats = $('<div id="displayDefenderStats" class="col-xs-2">').html('Health: ' + defenderCharacterStats.hp + '<br>Attack: ' + defenderCharacterStats.ap + '<br>Counter: ' + defenderCharacterStats.ca);
 			defenderRow.append(displayDefenderStats);
+			$('#instructions').html("<p>Click ATTACK until he disappears!</p>");
+
 		};
 
 		// Selecting Giant as Defender
@@ -205,6 +211,8 @@ $( document ).ready(function() {
 
 			displayDefenderStats = $('<div id="displayDefenderStats" class="col-xs-2">').html('Health: ' + defenderCharacterStats.hp + '<br>Attack: ' + defenderCharacterStats.ap + '<br>Counter: ' + defenderCharacterStats.ca);
 			defenderRow.append(displayDefenderStats);
+			$('#instructions').html("<p>Click ATTACK until he disappears!</p>");
+
 		};
 	
 
@@ -226,6 +234,22 @@ $( document ).ready(function() {
 			//===================
 			if (usersCharacterStats.hp < 1) {
 				alert("You Lose");
+				resetDefender();
+				opponentsRow.remove();
+				opponent1;
+				opponent2;
+				opponent3;
+
+				
+					$('#userRow').append('<div id="warrior" class="col-xs-2 character"><a href="#"><img class="media-object" src="https://github.com/hcbreedl/week-4-game/blob/master/assets/images/warrior.png?raw=true" alt=""></a></div>');
+					$('#userRow').append('<div id="girl" class="col-xs-2 character"><a href="#"><img class="media-object" src="https://github.com/hcbreedl/week-4-game/blob/master/assets/images/girl.png?raw=true" alt=""></a></div>');
+					$('#userRow').append('<div id="goblin" class="col-xs-2 character"><a href="#"><img class="media-object" src="https://github.com/hcbreedl/week-4-game/blob/master/assets/images/goblin.png?raw=true" alt=""></a></div>');
+					$('#userRow').append('<div id="giant" class="col-xs-2 character"><a href="#"><img class="media-object" src="https://github.com/hcbreedl/week-4-game/blob/master/assets/images/giant.png?raw=true" alt=""></a></div> ');
+
+
+				resetUserCharacter();
+
+				newGame();
 				
 			};
 
@@ -310,9 +334,6 @@ $( document ).ready(function() {
 					$('#userRow').append('<div id="goblin" class="col-xs-2 character"><a href="#"><img class="media-object" src="https://github.com/hcbreedl/week-4-game/blob/master/assets/images/goblin.png?raw=true" alt=""></a></div>');
 					$('#userRow').append('<div id="giant" class="col-xs-2 character"><a href="#"><img class="media-object" src="https://github.com/hcbreedl/week-4-game/blob/master/assets/images/giant.png?raw=true" alt=""></a></div> ');
 
-					// usersCharacter.remove();
-					// usersCharacterStats;
-					// displayUserStats.remove();
 					resetUserCharacter();
 
 					newGame();
