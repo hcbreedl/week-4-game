@@ -27,7 +27,6 @@ img {
 
 #opponentsRow img {
 	border: solid orange 1px;
-	opacity: 0.5;
 	margin-top: 25px;
 	margin-right: 0px;
 }
@@ -90,6 +89,7 @@ img {
 	font-family: "Lucida Console", Monaco, monospace;
 	text-align: center;
 }
+
 
 
 

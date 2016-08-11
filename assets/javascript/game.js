@@ -189,7 +189,7 @@ $( document ).ready(function() {
 			
 			$('#instructions').html("<p>Click<br> <span style='font-size: 24px'>ATTACK</span><br> until he disappears!</p>");
 
-			defender.fadeOut().fadeIn('slow');
+			defender.hide().fadeIn('slow');
 		};
 
 		// Selecting Girl as Defender
@@ -210,7 +210,7 @@ $( document ).ready(function() {
 			
 			$('#instructions').html("<p>Click <br> <span style='font-size: 24px'>ATTACK</span><br> until he disappears!</p>");
 
-			defender.fadeOut().fadeIn('slow');
+			defender.hide().fadeIn('slow');
 		};
 
 		// Selecting Goblin as Defender
@@ -231,7 +231,7 @@ $( document ).ready(function() {
 			
 			$('#instructions').html("<p>Click <br> <span style='font-size: 24px'>ATTACK</span><br> until he disappears!</p>");
 
-			defender.fadeOut().fadeIn('slow');
+			defender.hide().fadeIn('slow');
 		};
 
 		// Selecting Giant as Defender
@@ -252,7 +252,7 @@ $( document ).ready(function() {
 			
 			$('#instructions').html("<p>Click <br> <span style='font-size: 24px'>ATTACK</span><br> until he disappears!</p>");
 
-			defender.fadeOut().fadeIn('slow');
+			defender.hide().fadeIn('slow');
 		};
 	
 
@@ -260,6 +260,7 @@ $( document ).ready(function() {
 // Pressing the Attack Button
 //===========================
 		$('#attack').on('click', function() {
+			// $('usersCharacterStats.hp').css( "color", "red" );
 			usersCharacterStats.hp = usersCharacterStats.hp - defenderCharacterStats.ca;
 			defenderCharacterStats.hp = defenderCharacterStats.hp - usersCharacterStats.ap;
 			usersCharacterStats.ap = usersCharacterStats.ap * 2;
@@ -269,7 +270,6 @@ $( document ).ready(function() {
 
 			$('#displayUserStats').html('Health: ' + usersCharacterStats.hp + '<br>Attack: ' + usersCharacterStats.ap + '<br>Counter: ' + usersCharacterStats.ca);
 			$('#displayDefenderStats').html('Health: ' + defenderCharacterStats.hp + '<br>Attack: ' + defenderCharacterStats.ap + '<br>Counter: ' + defenderCharacterStats.ca);
-
 			//===================
 			// Losing
 			//===================
