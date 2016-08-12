@@ -1,4 +1,6 @@
 $( document ).ready(function() {
+	// var audio = new Audio('http://66.90.94.162/ost/bomberman-64-second-attack-/okjvgoshxl/bm64sa-gravity-generator.mp3');
+	audio.play();
 	var newGame = function () {
 
 
@@ -39,7 +41,6 @@ $( document ).ready(function() {
 	var defenderCharacterStats;
 	var displayDefenderStats;
 
-
 	var opponentsRow;
 	var defenderRow;
 	var attack;	
@@ -55,7 +56,7 @@ $( document ).ready(function() {
 		defenderRow.remove();
 		defender;
 		defenderCharacterStats;
-	}
+	};
 	
 //============================
 // Selecting user's character:
@@ -197,6 +198,8 @@ $( document ).ready(function() {
 			defenderRow = $('<div id="defenderRow" class="row"></div>');
 			defender = $('#girl');
 			defenderCharacterStats = girl;
+
+			// defenderControl = true;
 			
 			opponentsRow.after(defenderRow);
 			defenderRow.append(defender);
@@ -218,6 +221,8 @@ $( document ).ready(function() {
 			defenderRow = $('<div id="defenderRow" class="row"></div>');
 			defender = $('#goblin');
 			defenderCharacterStats = goblin;
+
+			// defenderControl = true;
 			
 			opponentsRow.after(defenderRow);
 			defenderRow.append(defender);
@@ -239,6 +244,8 @@ $( document ).ready(function() {
 			defenderRow = $('<div id="defenderRow" class="row"></div>');
 			defender = $('#giant');
 			defenderCharacterStats = giant;
+
+			// defenderControl = true;
 			
 			opponentsRow.after(defenderRow);
 			defenderRow.append(defender);
@@ -260,16 +267,15 @@ $( document ).ready(function() {
 // Pressing the Attack Button
 //===========================
 		$('#attack').on('click', function() {
-			// $('usersCharacterStats.hp').css( "color", "red" );
 			usersCharacterStats.hp = usersCharacterStats.hp - defenderCharacterStats.ca;
 			defenderCharacterStats.hp = defenderCharacterStats.hp - usersCharacterStats.ap;
 			usersCharacterStats.ap = usersCharacterStats.ap * 2;
 
-			// defender.effect('bounce', 'slow');
 			defender.fadeOut('fast').fadeIn('fast');
 
 			$('#displayUserStats').html('Health: ' + usersCharacterStats.hp + '<br>Attack: ' + usersCharacterStats.ap + '<br>Counter: ' + usersCharacterStats.ca);
 			$('#displayDefenderStats').html('Health: ' + defenderCharacterStats.hp + '<br>Attack: ' + defenderCharacterStats.ap + '<br>Counter: ' + defenderCharacterStats.ca);
+			
 			//===================
 			// Losing
 			//===================
