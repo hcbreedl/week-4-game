@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 	// var audio = new Audio('http://66.90.94.162/ost/bomberman-64-second-attack-/okjvgoshxl/bm64sa-gravity-generator.mp3');
-	audio.play();
+	// audio.play();
 	var newGame = function () {
 
 
@@ -189,8 +189,8 @@ $( document ).ready(function() {
 			defenderRow.append(displayDefenderStats);
 			
 			$('#instructions').html("<p>Click<br> <span style='font-size: 24px'>ATTACK</span><br> until he disappears!</p>");
-
-			defender.hide().fadeIn('slow');
+		
+			$(opponentsRow).fadeOut(1000).fadeIn(1000).fadeOut(1000).fadeIn(1000).fadeTo('slow',0.5);
 		};
 
 		// Selecting Girl as Defender
@@ -213,7 +213,7 @@ $( document ).ready(function() {
 			
 			$('#instructions').html("<p>Click <br> <span style='font-size: 24px'>ATTACK</span><br> until he disappears!</p>");
 
-			defender.hide().fadeIn('slow');
+			$(opponentsRow).fadeOut(1000).fadeIn(1000).fadeOut(1000).fadeIn(1000).fadeTo('slow',0.5);
 		};
 
 		// Selecting Goblin as Defender
@@ -236,7 +236,7 @@ $( document ).ready(function() {
 			
 			$('#instructions').html("<p>Click <br> <span style='font-size: 24px'>ATTACK</span><br> until he disappears!</p>");
 
-			defender.hide().fadeIn('slow');
+			$(opponentsRow).fadeOut(1000).fadeIn(1000).fadeOut(1000).fadeIn(1000).fadeTo('slow',0.5);
 		};
 
 		// Selecting Giant as Defender
@@ -259,7 +259,7 @@ $( document ).ready(function() {
 			
 			$('#instructions').html("<p>Click <br> <span style='font-size: 24px'>ATTACK</span><br> until he disappears!</p>");
 
-			defender.hide().fadeIn('slow');
+			$(opponentsRow).fadeOut(1000).fadeIn(1000).fadeOut(1000).fadeIn(1000).fadeTo('slow',0.5);
 		};
 	
 
