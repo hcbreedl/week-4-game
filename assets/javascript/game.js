@@ -280,59 +280,21 @@ $( document ).ready(function() {
 
 			$('#displayUserStats').html('Health Points: ' + usersCharacterStats.hp + '<br>Attack Power: ' + usersCharacterStats.ap + '<br>Counter Attack Power: ' + usersCharacterStats.ca);
 			$('#displayDefenderStats').html('Health Points: ' + defenderCharacterStats.hp + '<br>Attack Power: ' + defenderCharacterStats.ap + '<br>Counter Attack Power: ' + defenderCharacterStats.ca);
-			
-			//===================
-			// Losing
-			//===================
-			if (usersCharacterStats.hp < 1) {
-
-				// $('#instructions').html("Oh No!<br>You Lost!<br>Let's try again...<br>Select your character!</p>");
-
-				resetDefender();
-
-				opponentsRow.remove();
-				opponent1;
-				opponent2;
-				opponent3;
-
-				$('#userRow').append('<div id="warrior" class="col-xs-2 character"><a href="#"><img class="media-object" src="https://github.com/hcbreedl/week-4-game/blob/master/assets/images/warrior.png?raw=true" alt=""></a></div>');
-				$('#userRow').append('<div id="girl" class="col-xs-2 character"><a href="#"><img class="media-object" src="https://github.com/hcbreedl/week-4-game/blob/master/assets/images/girl.png?raw=true" alt=""></a></div>');
-				$('#userRow').append('<div id="goblin" class="col-xs-2 character"><a href="#"><img class="media-object" src="https://github.com/hcbreedl/week-4-game/blob/master/assets/images/goblin.png?raw=true" alt=""></a></div>');
-				$('#userRow').append('<div id="giant" class="col-xs-2 character"><a href="#"><img class="media-object" src="https://github.com/hcbreedl/week-4-game/blob/master/assets/images/giant.png?raw=true" alt=""></a></div> ');
-
-				resetUserCharacter();
-
-				newGame();
-				$('#instructions').html("Oh No!<br>You Lost!<br>Let's try again...<br>Select your character!</p>");
-
-
-				if ((usersCharacterStats.hp < 1) && (opponentsLeft < 1)) {
-
-					$('#instructions').html("AH! So close!<br>To play again, simply select your character!</p>")
-
-					$('#userRow').append('<div id="warrior" class="col-xs-2 character"><a href="#"><img class="media-object" src="https://github.com/hcbreedl/week-4-game/blob/master/assets/images/warrior.png?raw=true" alt=""></a></div>');
-					$('#userRow').append('<div id="girl" class="col-xs-2 character"><a href="#"><img class="media-object" src="https://github.com/hcbreedl/week-4-game/blob/master/assets/images/girl.png?raw=true" alt=""></a></div>');
-					$('#userRow').append('<div id="goblin" class="col-xs-2 character"><a href="#"><img class="media-object" src="https://github.com/hcbreedl/week-4-game/blob/master/assets/images/goblin.png?raw=true" alt=""></a></div>');
-					$('#userRow').append('<div id="giant" class="col-xs-2 character"><a href="#"><img class="media-object" src="https://github.com/hcbreedl/week-4-game/blob/master/assets/images/giant.png?raw=true" alt=""></a></div> ');
-
-					resetUserCharacter();
-
-					newGame();
-				}
-			};
 
 			//===================
 			// Winning
 			//===================
 			if (defenderCharacterStats.hp < 1) {
 				opponentsLeft = opponentsLeft - 1;
-
+				console.log(opponentsLeft);
 				resetDefender();
 
 				$('#attack').remove();
 
-				$('#instructions').html("<p>You beat that character!<br>Great Job!<br>Select who you think you can take out next!</p>")
+				$('#instructions').html('<p>SELECT A CHARACTER<br><br>Users Character is circled in <span style="color: green">GREEN</span>!<br>Opponents will be circled in<br> <span style="color: orange">ORANGE</span>!"</p>')
 				
+				
+
 				// Selecting Warrior as Defender (2nd Time)
 				if ($(this).is($('#warrior')) && ($(this).hasClass('opponent'))) {
 					defenderRow = $('<div id="defenderRow" class="row"></div>');
@@ -407,7 +369,7 @@ $( document ).ready(function() {
 				};
 
 				if ((opponentsLeft < 1) && (defenderCharacterStats.hp < 1)) {
-					$('#instructions').html("YOU BEAT THEM ALL!<br>You're Awesome!<br>To play again, simply select your character!</p>")
+					// $('#instructions').html("YOU BEAT THEM ALL!<br>You're Awesome!<br>To play again, simply select your character!</p>")
 
 					$('#userRow').append('<div id="warrior" class="col-xs-2 character"><a href="#"><img class="media-object" src="https://github.com/hcbreedl/week-4-game/blob/master/assets/images/warrior.png?raw=true" alt=""></a></div>');
 					$('#userRow').append('<div id="girl" class="col-xs-2 character"><a href="#"><img class="media-object" src="https://github.com/hcbreedl/week-4-game/blob/master/assets/images/girl.png?raw=true" alt=""></a></div>');
@@ -418,6 +380,41 @@ $( document ).ready(function() {
 
 					newGame();
 				}
+				//===================
+			// Losing
+			//===================
+			if (usersCharacterStats.hp < 1) {
+
+				resetDefender();
+
+				opponentsLeft = 3;
+
+				opponentsRow.remove();
+				opponent1;
+				opponent2;
+				opponent3;
+
+				$('#userRow').append('<div id="warrior" class="col-xs-2 character"><a href="#"><img class="media-object" src="https://github.com/hcbreedl/week-4-game/blob/master/assets/images/warrior.png?raw=true" alt=""></a></div>');
+				$('#userRow').append('<div id="girl" class="col-xs-2 character"><a href="#"><img class="media-object" src="https://github.com/hcbreedl/week-4-game/blob/master/assets/images/girl.png?raw=true" alt=""></a></div>');
+				$('#userRow').append('<div id="goblin" class="col-xs-2 character"><a href="#"><img class="media-object" src="https://github.com/hcbreedl/week-4-game/blob/master/assets/images/goblin.png?raw=true" alt=""></a></div>');
+				$('#userRow').append('<div id="giant" class="col-xs-2 character"><a href="#"><img class="media-object" src="https://github.com/hcbreedl/week-4-game/blob/master/assets/images/giant.png?raw=true" alt=""></a></div> ');
+
+				resetUserCharacter();
+
+				newGame();
+
+				if ((usersCharacterStats.hp < 1) && (opponentsLeft < 3)) {
+
+					$('#userRow').append('<div id="warrior" class="col-xs-2 character"><a href="#"><img class="media-object" src="https://github.com/hcbreedl/week-4-game/blob/master/assets/images/warrior.png?raw=true" alt=""></a></div>');
+					$('#userRow').append('<div id="girl" class="col-xs-2 character"><a href="#"><img class="media-object" src="https://github.com/hcbreedl/week-4-game/blob/master/assets/images/girl.png?raw=true" alt=""></a></div>');
+					$('#userRow').append('<div id="goblin" class="col-xs-2 character"><a href="#"><img class="media-object" src="https://github.com/hcbreedl/week-4-game/blob/master/assets/images/goblin.png?raw=true" alt=""></a></div>');
+					$('#userRow').append('<div id="giant" class="col-xs-2 character"><a href="#"><img class="media-object" src="https://github.com/hcbreedl/week-4-game/blob/master/assets/images/giant.png?raw=true" alt=""></a></div> ');
+
+					resetUserCharacter();
+
+					newGame();
+				}
+			};
 			}
 
 		}); // End of attack button onclick			
