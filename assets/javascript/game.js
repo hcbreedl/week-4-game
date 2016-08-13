@@ -286,7 +286,7 @@ $( document ).ready(function() {
 			//===================
 			if (usersCharacterStats.hp < 1) {
 
-				$('#instructions').html("Oh No!<br>You Lost!<br>Let's try again...<br>Select your character!</p>");
+				// $('#instructions').html("Oh No!<br>You Lost!<br>Let's try again...<br>Select your character!</p>");
 
 				resetDefender();
 
@@ -303,6 +303,8 @@ $( document ).ready(function() {
 				resetUserCharacter();
 
 				newGame();
+				$('#instructions').html("Oh No!<br>You Lost!<br>Let's try again...<br>Select your character!</p>");
+
 
 				if ((usersCharacterStats.hp < 1) && (opponentsLeft < 1)) {
 
