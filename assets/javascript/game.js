@@ -30,6 +30,7 @@ $( document ).ready(function() {
 
 	var usersCharacter;
 	var usersCharacterStats;
+	var baseAttack;
 	var displayUserStats;
 
 	var opponent1;
@@ -69,7 +70,8 @@ $( document ).ready(function() {
 		if (($(this).is($('#warrior'))) && ($(this).hasClass('character'))) {
 			usersCharacter = $('#warrior');
 			usersCharacterStats = warrior;
-			displayUserStats = $('<div id="displayUserStats" class="col-xs-2">').html('Health: ' + usersCharacterStats.hp + '<br>Attack: ' + usersCharacterStats.ap + '<br>Counter: ' + usersCharacterStats.ca);
+			baseAttack = warrior.ap;
+			displayUserStats = $('<div id="displayUserStats" class="col-xs-2">').html('Health Points: ' + usersCharacterStats.hp + '<br>Attack Power: ' + usersCharacterStats.ap + '<br>Counter Attack Power: ' + usersCharacterStats.ca);
 			
 			$('#userRow').append(displayUserStats);
 
@@ -95,7 +97,8 @@ $( document ).ready(function() {
 		if ($(this).is($('#girl')) && ($(this).hasClass('character'))) {
 			usersCharacter = $('#girl');
 			usersCharacterStats = girl;
-			displayUserStats = $('<div id="displayUserStats" class="col-xs-2">').html('Health: ' + usersCharacterStats.hp + '<br>Attack: ' + usersCharacterStats.ap + '<br>Counter: ' + usersCharacterStats.ca);
+			baseAttack = girl.ap;
+			displayUserStats = $('<div id="displayUserStats" class="col-xs-2">').html('Health Points: ' + usersCharacterStats.hp + '<br>Attack Power: ' + usersCharacterStats.ap + '<br>Counter Attack Power: ' + usersCharacterStats.ca);
 
 			$('#userRow').append(displayUserStats);
 
@@ -121,7 +124,8 @@ $( document ).ready(function() {
 		if ($(this).is($('#goblin')) && ($(this).hasClass('character'))) {
 			usersCharacter = $('#goblin');
 			usersCharacterStats = goblin;
-			displayUserStats = $('<div id="displayUserStats" class="col-xs-2">').html('Health: ' + usersCharacterStats.hp + '<br>Attack: ' + usersCharacterStats.ap + '<br>Counter: ' + usersCharacterStats.ca);
+			baseAttack = goblin.ap;
+			displayUserStats = $('<div id="displayUserStats" class="col-xs-2">').html('Health Points: ' + usersCharacterStats.hp + '<br>Attack Power: ' + usersCharacterStats.ap + '<br>Counter Attack Power: ' + usersCharacterStats.ca);
 			
 			$('#userRow').append(displayUserStats);
 
@@ -147,7 +151,8 @@ $( document ).ready(function() {
 		if ($(this).is($('#giant')) && ($(this).hasClass('character'))) {
 			usersCharacter = $('#giant');
 			usersCharacterStats = giant;
-			displayUserStats = $('<div id="displayUserStats" class="col-xs-2">').html('Health: ' + usersCharacterStats.hp + '<br>Attack: ' + usersCharacterStats.ap + '<br>Counter: ' + usersCharacterStats.ca);
+			baseAttack = giant.ap;
+			displayUserStats = $('<div id="displayUserStats" class="col-xs-2">').html('Health Points: ' + usersCharacterStats.hp + '<br>Attack Power: ' + usersCharacterStats.ap + '<br>Counter Attack Power: ' + usersCharacterStats.ca);
 			
 			$('#userRow').append(displayUserStats);
 
@@ -268,18 +273,21 @@ $( document ).ready(function() {
 //===========================
 		$('#attack').on('click', function() {
 			usersCharacterStats.hp = usersCharacterStats.hp - defenderCharacterStats.ca;
-			defenderCharacterStats.hp = defenderCharacterStats.hp - usersCharacterStats.ap;
-			usersCharacterStats.ap = usersCharacterStats.ap * 2;
+			defenderCharacterStats.hp = defenderCharacterStats.hp - usersCharacterStats.ap; 
+			usersCharacterStats.ap = usersCharacterStats.ap + baseAttack;
 
 			defender.fadeOut('fast').fadeIn('fast');
 
-			$('#displayUserStats').html('Health: ' + usersCharacterStats.hp + '<br>Attack: ' + usersCharacterStats.ap + '<br>Counter: ' + usersCharacterStats.ca);
-			$('#displayDefenderStats').html('Health: ' + defenderCharacterStats.hp + '<br>Attack: ' + defenderCharacterStats.ap + '<br>Counter: ' + defenderCharacterStats.ca);
+			$('#displayUserStats').html('Health Points: ' + usersCharacterStats.hp + '<br>Attack Power: ' + usersCharacterStats.ap + '<br>Counter Attack Power: ' + usersCharacterStats.ca);
+			$('#displayDefenderStats').html('Health Points: ' + defenderCharacterStats.hp + '<br>Attack Power: ' + defenderCharacterStats.ap + '<br>Counter Attack Power: ' + defenderCharacterStats.ca);
 			
 			//===================
 			// Losing
 			//===================
 			if (usersCharacterStats.hp < 1) {
+
+				$('#instructions').html("Oh No!<br>You Lost!<br>Let's try again...<br>Select your character!</p>");
+
 				resetDefender();
 
 				opponentsRow.remove();
@@ -295,8 +303,6 @@ $( document ).ready(function() {
 				resetUserCharacter();
 
 				newGame();
-
-				$('#instructions').html("Oh No!<br>You Lost!<br>Let's try again...<br>Select your character!</p>");
 
 				if ((usersCharacterStats.hp < 1) && (opponentsLeft < 1)) {
 
