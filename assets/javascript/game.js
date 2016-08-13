@@ -1,6 +1,6 @@
 $( document ).ready(function() {
-	// var audio = new Audio('http://66.90.94.162/ost/bomberman-64-second-attack-/okjvgoshxl/bm64sa-gravity-generator.mp3');
-	// audio.play();
+	var audio = new Audio('http://66.90.94.162/ost/bomberman-64-second-attack-/okjvgoshxl/bm64sa-gravity-generator.mp3');
+	audio.play();
 	var newGame = function () {
 
 
